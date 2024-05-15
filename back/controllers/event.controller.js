@@ -21,9 +21,9 @@ const getEvents = async (req, res) => {
     const {userId} = req.params;
     try {
         const events = await eventService.getEvents(userId);
-        Response.success(res, events);
+        res.send(Response.success(events));
     } catch (error) {
-        Response.error(res, error);
+        res.send(Response.error(error.message));
     }
 }
 
@@ -32,4 +32,3 @@ module.exports = {
     createEvent,
     getEvents
 }
-

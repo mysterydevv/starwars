@@ -21,7 +21,7 @@ class _NewsCardState extends State<NewsCard> {
   @override
   void initState() {
     super.initState();
-    image = fileService.read(widget.news.image);
+    image = fileService.read(widget.news.image!);
   }
 
   @override

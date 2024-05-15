@@ -68,6 +68,7 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
             final feedback = FeedBack(email, stars, text);
             await cinemaService.addFeedBack(feedback, cinemaId);  
             widget.cinema.feedbacks.add(feedback);
+            // ignore: use_build_context_synchronously
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => CinemaDetailScreen(cinema: widget.cinema),

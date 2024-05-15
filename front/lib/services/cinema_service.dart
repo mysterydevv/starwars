@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:flutter_movie/models/cinema/cinema.dart';
 import 'package:flutter_movie/models/cinema/feedback.dart';
 import 'package:flutter_movie/models/cinema/place.dart';

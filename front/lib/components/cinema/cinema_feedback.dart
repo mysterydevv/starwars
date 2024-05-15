@@ -4,6 +4,7 @@ import 'package:flutter_movie/models/cinema/feedback.dart';
 import 'package:flutter_movie/services/cinema_service.dart';
 import 'package:flutter_movie/utils/helpers.dart';
 
+// ignore: must_be_immutable
 class FeedBackCard extends StatelessWidget {
   final FeedBack feedback;
   final String cinemaId;

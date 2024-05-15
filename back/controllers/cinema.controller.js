@@ -1,5 +1,6 @@
 const cinemaService = require('../services/cinema.service');
 const Response = require('../utils/response');
+const logger = require('../logger/logger.config');
 
 const createCinema = async (req, res) => {
     try{
@@ -45,9 +46,37 @@ const updatePlace = async (req, res) => {
     }
 }
 
+const addFeedback = async (req, res) => {
+    try{
+        const {id,email,countOfStar,text} = req.body;
+        await cinemaService.addFeedback(id,email,countOfStar,text);
+        res.send(Response.success(null));
+    }
+    catch (error){
+        res.send(Response.error(error.message));
+    }
+
+}
+
+const removeFeedback = async (req, res) => {
+    try{
+        const {id,email,countOfStar,text} = req.body;
+        await cinemaService.removeFeedBack(id,email,countOfStar,text);
+        res.send(Response.success(null));
+    }
+    catch (error){
+        res.send(Response.error(error.message));
+        logger.error(`Error removing feedback: ${error}`);
+    }
+
+}
+
+
 module.exports = {
     createCinema,
     getCinema,
     getAllCinemas,
-    updatePlace
+    updatePlace,
+    addFeedback,
+    removeFeedback
 }

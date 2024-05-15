@@ -38,7 +38,7 @@ class NewsDetailScreenHomeState extends State<NewsDetailScreenHome> {
   @override
   void initState() {
     super.initState();
-    image = fileService.read(widget.news.image);
+    image = fileService.read(widget.news.image!);
   }
 
   @override
@@ -91,8 +91,8 @@ class NewsDetailScreenHomeState extends State<NewsDetailScreenHome> {
                         fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(height: 5),
-                  const Text(
-                    'widget.news.title',
+                  Text(
+                    '${widget.news.title}',
                     softWrap: true,
                     style: TextStyle(
                       fontSize: 18,

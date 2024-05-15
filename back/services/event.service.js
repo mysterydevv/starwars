@@ -1,6 +1,6 @@
 const {db} = require('../config');
 
-const eventTable = db.collection('events');
+const eventTable = db.collection('event');
 
 
 const createEvent = async (userId,cinemaId,place,dateTime) => {

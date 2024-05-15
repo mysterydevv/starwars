@@ -1,5 +1,7 @@
 const {db} = require('../config');
 const cinemaCollection = db.collection('cinema');
+const admin = require('firebase-admin');
+const logger = require('../logger/logger.config');
 
 const createCinema = async (name,address,phone,places,image,feedback,) => {
     const cinema = {
@@ -33,16 +35,20 @@ const getAllCinemas = async () => {
 }
 
 
-const addFeedback = async (id, username,countOfStar,text) => {
+const addFeedback = async (id, email,countOfStar,text) => {
     const feedback = {
-        username,
+        email,
         countOfStar,
         text,
-    }
+    };
+
     const cinemaRef = cinemaCollection.doc(id);
+
     await cinemaRef.update({
-        feedback: [...feedback]
+        feedback: admin.firestore.FieldValue.arrayUnion(feedback)
     });
+
+    logger.info(`Feedback added to cinema with id ${id}`);
 }
 
 const placeOrder = async (id,places) => {
@@ -77,11 +83,26 @@ const updatePlace = async (id,place) => {
     });
 }
 
+const removeFeedBack = async (id,email,countOfStar,text) => {
+    const feedback = {
+        email,
+        countOfStar,
+        text,
+    };
+
+    const cinemaRef = cinemaCollection.doc(id);
+
+    await cinemaRef.update({
+        feedback: admin.firestore.FieldValue.arrayRemove(feedback)
+    });
+}
+
 module.exports = {
     createCinema,
     getCinema,
     getAllCinemas,
     addFeedback,
     placeOrder,
-    updatePlace
+    updatePlace,
+    removeFeedBack
 }
