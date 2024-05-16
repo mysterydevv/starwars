@@ -30,13 +30,15 @@ class OwnAppBar extends StatelessWidget {
                 );
               }),
             ),
-            Container(
-              alignment: Alignment.center,
-              width: 100,
-              height: 100,
-              margin: EdgeInsets.only(left: (width * 0.27)-10),
-              child: Image.asset('lib/images/logo.png'),
-            )
+        Container(
+          alignment: Alignment.center,
+          width: 100,
+          height: 100,
+          margin: EdgeInsets.only(left: (width * 0.27) - 10).copyWith(left: (width * 0.27) - 10 < 0 ? 0 : (width * 0.27) - 10),
+          child: Image.asset('lib/images/logo.png'),
+        )
+
+
           ],
         ),
       ),

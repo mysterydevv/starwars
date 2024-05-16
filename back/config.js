@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./flutter-movie-8a79d-firebase-adminsdk-8vl4z-24df37ccaa.json');
+const serviceAccount = require('./orbis2-d7481-firebase-adminsdk-weqc2-d9b6482e29.json');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
