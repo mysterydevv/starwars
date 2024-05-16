@@ -5,6 +5,6 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 const auth = admin.auth();
-const bucket = admin.storage().bucket('gs://flutter-movie-8a79d.appspot.com');
+const bucket = admin.storage().bucket('gs://orbis2-d7481.appspot.com');
 
 module.exports = { db, auth,bucket};

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie/components/circular_avatar.dart';
 import 'package:flutter_movie/models/actors.dart';
-import 'package:flutter_movie/screens/actor_detail_screen.dart';
+import 'package:flutter_movie/screens/actor_info_screen.dart';
 import 'package:flutter_movie/services/file_service.dart';
 
 
@@ -26,7 +26,7 @@ class _ActorCardState extends State<ActorCard> {
 
   @override
   void initState() {
-    super.initState();  
+    super.initState();
     image = fileService.read(widget.actor.image);
   }
 

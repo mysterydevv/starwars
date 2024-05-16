@@ -73,27 +73,7 @@ flutter:
   assets:
     - lib/images/logo.png
     - lib/images/videos/trailer.mp4
-    - lib/images/dicaprio/dicaprio.png  
-    - lib/images/dicaprio/scene1.png
-    - lib/images/dicaprio/scene2.png
-    - lib/images/dicaprio/scene3.png
-    - lib/images/levitt/levitt.png
-    - lib/images/levitt/scene1.png
-    - lib/images/levitt/scene2.png
-    - lib/images/levitt/scene3.png  
-    - lib/images/hardy.png
-    - lib/images/nolan.png
-    - lib/images/berenger.png
-    - lib/images/Dileep.png
-    - lib/images/elliot.png
-    - lib/images/joseph.png
-    - lib/images/lucas.png
-    - lib/images/marion.png
-    - lib/images/michael.png
-    - lib/images/murphy.png
-    - lib/images/nolan.png
-    - lib/images/tomas.png
-    - lib/images/watanabe.png
+
     - lib/images/user.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
