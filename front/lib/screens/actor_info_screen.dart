@@ -64,7 +64,7 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                       IconButton(
                           onPressed: () {
                             showDialog(context: context, builder: (context) => UpdateActorDialog(actor: widget.actor));
-                          }, icon: const Icon(Icons.edit)),
+                          }, icon: const Icon(Icons.edit, color: Colors.black,)),
                       IconButton(
                           onPressed: () async {
                             await actorService.deleteActor(widget.actor.id!);
@@ -72,12 +72,12 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) => const ActorScreen()));
                           },
-                          icon: const Icon(Icons.delete)),
+                          icon: const Icon(Icons.delete, color: Colors.black,)),
                     ],
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Актер',
+                    'Actor',
                     style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Roboto',
@@ -95,7 +95,7 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    'Роль: ${widget.actor.role}',
+                    'Role: ${widget.actor.role}',
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Roboto',
@@ -104,7 +104,7 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    'Возраст: ${widget.actor.age}',
+                    'Age: ${widget.actor.age}',
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Roboto',
@@ -113,7 +113,7 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Фильмы:',
+                    'Films:',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Roboto',
@@ -144,10 +144,10 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                             ],
                           ),
                         )
-                      : const Text('Нет информации'),
+                      : const Text('No info'),
                   const SizedBox(height: 20),
                   const Text(
-                    'Награды:',
+                    'Awards:',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Roboto',
@@ -179,10 +179,10 @@ class ActorDetailScreenHomeState extends State<ActorDetailScreenHome> {
                             ],
                           ),
                         )
-                      : const Text('Нет информации'),
+                      : const Text('No info'),
                   const SizedBox(height: 5),
                   const Text(
-                    'Биография:',
+                    'Biography:',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Roboto',
