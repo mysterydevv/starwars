@@ -3,7 +3,7 @@ import 'package:flutter_movie/main.dart';
 import 'package:flutter_movie/screens/cinema_screen.dart';
 import 'package:flutter_movie/screens/stuff_screen.dart';
 import 'package:flutter_movie/screens/news.dart';
-import 'package:flutter_movie/screens/actor_screen.dart';
+import 'package:flutter_movie/screens/cast_screen.dart';
 import 'package:flutter_movie/screens/profile_screen.dart';
 
 class NavBar extends StatelessWidget {
@@ -17,7 +17,7 @@ class NavBar extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 200,
-            color: const Color.fromRGBO(58, 63, 71, 1.0),
+            color: const Color.fromRGBO(0, 0, 0, 1.0),
             child: Center(
               child: Column(
                 children: [
@@ -32,9 +32,9 @@ class NavBar extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(top: 10),
                     child: const Text(
-                      'Movie App',
+                      '',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.red,
                         fontSize: 20,
                       ),
                     ),
@@ -44,7 +44,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),
+            leading: const Icon(Icons.home_rounded, color: Colors.black,),
             title: const Text('Home'),
             onTap: () {
               Navigator.push(context,
@@ -52,23 +52,23 @@ class NavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.movie),
-            title: const Text('Stuff members'),
+            leading: const Icon(Icons.bar_chart_rounded, color: Colors.black),
+            title: const Text('Stuff'),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const StuffScreen()));
             },
           ),
           ListTile(
-            leading: const Icon(Icons.movie),
-            title: const Text('Actors'),
+            leading: const Icon(Icons.people_alt_rounded, color: Colors.black),
+            title: const Text('Cast'),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const ActorScreen()));
             },
           ),
           ListTile(
-            leading: const Icon(Icons.tv),
+            leading: const Icon(Icons.book_rounded, color: Colors.black),
             title: const Text('News'),
             onTap: () {
               Navigator.push(context,
@@ -76,8 +76,8 @@ class NavBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.location_on),
-            title: const Text('Find Cinemas'),
+            leading: const Icon(Icons.location_city_rounded, color: Colors.black),
+            title: const Text('Cinemas'),
             onTap: () {
               Navigator.push(
                   context,
@@ -87,7 +87,7 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.person,
+              Icons.person_2_rounded, color: Colors.black,
             ),
             title: const Text('Profile'),
             onTap: () {
