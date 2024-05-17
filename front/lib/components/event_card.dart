@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 class EventCard extends StatelessWidget {
   final Event event;
 
-  const EventCard({super.key, required this.event});
+  const EventCard({Key? key, required this.event}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,62 +21,38 @@ class EventCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Событие ${event.id ?? ''}',
+              'Event ${event.id ?? ''}',
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                const Icon(Icons.person, color: Colors.grey),
-                const SizedBox(width: 5),
-                Text('User ID: ${event.userId}'),
-              ],
-            ),
-            const SizedBox(height: 5),
-            Row(
-              children: [
-                const Icon(Icons.local_movies, color: Colors.grey),
-                const SizedBox(width: 5),
-                Text('Cinema ID: ${event.cinemaId}'),
-              ],
-            ),
-            const SizedBox(height: 5),
-            Row(
-              children: [
-                const Icon(Icons.event_seat, color: Colors.grey),
-                const SizedBox(width: 5),
-                Text('Place Number: ${event.place.number}'),
-              ],
-            ),
-            const SizedBox(height: 5),
-            Row(
-              children: [
-                const Icon(Icons.email, color: Colors.grey),
-                const SizedBox(width: 5),
-                Text('Email: ${event.place.email ?? 'N/A'}'),
-              ],
-            ),
+            buildInfoRow(Icons.person, 'User ID: ${event.userId}'),
+            buildInfoRow(Icons.local_movies, 'Cinema ID: ${event.cinemaId}'),
+            buildInfoRow(Icons.event_seat, 'Place Number: ${event.place.number}'),
+            buildInfoRow(Icons.email, 'Email: ${event.place.email ?? 'N/A'}'),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                const Icon(Icons.calendar_today, color: Colors.grey),
-                const SizedBox(width: 5),
-                Text('Date: ${DateFormat('yyyy-MM-dd – kk:mm').format(event.date)}'),
-              ],
-            ),
-            Row(
-              children: [
-                const Icon(Icons.place, color: Colors.grey),
-                const SizedBox(width: 5),
-                Text('Place: ${event.place.number}'),
-              ],
-            )
+            buildInfoRow(Icons.calendar_today, 'Date: ${DateFormat('yyyy-MM-dd – kk:mm').format(event.date)}'),
+            buildInfoRow(Icons.place, 'Place: ${event.place.number}'),
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildInfoRow(IconData icon, String text) {
+    return Row(
+      children: [
+        Icon(icon, color: Colors.grey),
+        const SizedBox(width: 5),
+        Flexible(
+          child: Text(
+            text,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
     );
   }
 }
