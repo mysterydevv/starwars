@@ -85,14 +85,13 @@ class CinemaDetailScreenHomeState extends State<CinemaDetailScreenHome> {
                         ),
                         const Icon(Icons.location_on),
                         const SizedBox(width: 20),
-                        SizedBox(
-                          width: 300,
+                        Expanded(
                           child: Text(
                             widget.cinema.address,
                             softWrap: true,
                             style: const TextStyle(fontSize: 16),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -104,11 +103,13 @@ class CinemaDetailScreenHomeState extends State<CinemaDetailScreenHome> {
                       ),
                       const Icon(Icons.phone),
                       const SizedBox(width: 20),
-                      Text(
-                        widget.cinema.phone,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.blue,
+                      Expanded(
+                        child: Text(
+                          widget.cinema.phone,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     ],
@@ -145,10 +146,10 @@ class CinemaDetailScreenHomeState extends State<CinemaDetailScreenHome> {
                     children: widget.cinema.feedbacks
                         .map(
                           (feedback) => FeedBackCard(
-                            feedback: feedback,
-                            cinemaId: widget.cinema.id,
-                          ),
-                        )
+                        feedback: feedback,
+                        cinemaId: widget.cinema.id,
+                      ),
+                    )
                         .toList(),
                   ),
                 ],
