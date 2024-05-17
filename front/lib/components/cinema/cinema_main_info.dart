@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie/screens/cinema_screen.dart';
 
 class CinemaMainInfo extends StatelessWidget {
-  static const String year = '2010';
-  static const String duration = '2h 28m';
-  static const String rating = '8.8/10';
+  static const String year = '2019';
+  static const String duration = '2h 22m';
+  static const String rating = '6.4/10';
 
   const CinemaMainInfo({super.key});
   @override
@@ -78,7 +78,7 @@ class CinemaMainInfo extends StatelessWidget {
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const CinemaScreen()));
           },
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
           child: const Text(
             'Buy tickets',
             style: TextStyle(

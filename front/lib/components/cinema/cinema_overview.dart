@@ -10,9 +10,9 @@ class CinemaOverview extends StatefulWidget {
 
 class CinemaOverviewState extends State<CinemaOverview> {
   bool _isExpanded = false;
-  static const String title = 'INCEPTION';
+  static const String title = 'Star Wars Episode IX';
   static const String fullText =
-      'Cobb is a talented thief, the best of the best in the dangerous art of extraction: he steals valuable secrets from the depths of the subconscious during sleep, when the human mind is most vulnerable. Cobb\'s rare abilities made him a valuable player in the treacherous world of industrial espionage, but they also turned him into an eternal fugitive and deprived him of everything he had ever loved.';
+      'In a galaxy far, far away, the remnants of the Resistance are regrouping, having suffered heavy losses in previous battles. While Ray learns to use the Force, the new Supreme Leader of the First Order, Kylo Ren, searches for a secret Sith hideout, from where messages from Emperor Palpatine are broadcast. Po, Fin and Chewbacca are engaged in subversive activities behind enemy lines, and Ken does not give up his attempts to lure Paradise to the dark side of the Force, being sure that they are destined to rule together. Ray will not only have to face Kyle again, but also finally find out the truth about her parents, as well as reveal a terrible secret that will determine her future and the fate of the entire galaxy...';
   void _toggleExpanded() {
     setState(() {
       _isExpanded = !_isExpanded;
