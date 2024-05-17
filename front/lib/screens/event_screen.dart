@@ -44,7 +44,6 @@ class EventScreenHomeState extends State<EventScreenHome> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +79,7 @@ class EventScreenHomeState extends State<EventScreenHome> {
                   const SizedBox(height: 20),
                   Row(
                     children: [
-                     Column(
+                      Column(
                         children: [
                           const Text(
                             'Free',
@@ -93,13 +92,14 @@ class EventScreenHomeState extends State<EventScreenHome> {
                           Container(
                             width: 50,
                             height: 50,
-                            decoration: const BoxDecoration(
-                              color: Colors.green,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
                               shape: BoxShape.circle,
+                              border: Border.all(color: Colors.black, width: 2),
                             ),
                           ),
                         ],
-                     ),
+                      ),
                       const SizedBox(width: 20),
                       Column(
                         children: [
@@ -115,7 +115,7 @@ class EventScreenHomeState extends State<EventScreenHome> {
                             width: 50,
                             height: 50,
                             decoration: const BoxDecoration(
-                              color: Colors.red,
+                              color: Colors.black,
                               shape: BoxShape.circle,
                             ),
                           ),

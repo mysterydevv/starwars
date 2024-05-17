@@ -20,14 +20,14 @@ class PlaceCard extends StatefulWidget {
 
 class PlaceCardState extends State<PlaceCard> {
   void _toggleOrder() async {
-    if(widget.place.isOrdered) {
+    if (widget.place.isOrdered) {
       Helper.showErrorDialog(context, 'Place is already ordered!');
       return;
     }
     setState(() {
       widget.place.isOrdered = !widget.place.isOrdered;
     });
-    var dialog = OrderDialog(place: widget.place,cinemaId: widget.cinemaId,);
+    var dialog = OrderDialog(place: widget.place, cinemaId: widget.cinemaId);
     var res = await showDialog<Place>(
       context: context,
       builder: (BuildContext context) {
@@ -49,20 +49,20 @@ class PlaceCardState extends State<PlaceCard> {
         width: 50,
         height: 50,
         decoration: BoxDecoration(
-          color: widget.place.isOrdered ? Colors.red : Colors.green,
+          color: widget.place.isOrdered ? Colors.black : Colors.white,
           shape: BoxShape.circle,
+          border: widget.place.isOrdered ? null : Border.all(color: Colors.black, width: 2),
         ),
         child: Center(
           child: Text(
             '${widget.place.number}',
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: widget.place.isOrdered ? Colors.white : Colors.black,
               fontSize: 20,
             ),
           ),
         ),
       ),
-      
     );
   }
 }
