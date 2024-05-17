@@ -42,14 +42,7 @@ flutter pub get
 - Add an Android and/or iOS app to your project and follow the setup instructions to obtain the necessary configuration files (google-services.json and/or GoogleService-Info.plist).
 - Enable Firebase Authentication and Firestore in your Firebase project.
 
-5. Configure TMDb API:
-- Sign up for a free account at The Movie Database and obtain an API key.
-- Add your API key to the lib/Services/key.dart file:
-```dart
-String api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-```
-
-6. Run the app:
+5. Run the app:
 ```bash
 flutter run
 ```
