@@ -29,7 +29,7 @@ To run Osiris locally, follow these steps:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mysteryman04/Movie_app.git
+[git clone https://github.com/mysteryman04/Movie_app.git](https://github.com/mysteryman04/starwars.git)
 ```
 
 3. Install the dependencies:
