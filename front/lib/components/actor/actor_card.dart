@@ -43,7 +43,7 @@ class _ActorCardState extends State<ActorCard> {
             OwnCircularAvatar(image: image),
             const SizedBox(height: 10),
             const Text(
-              'Актер',
+              'Actor',
               style: TextStyle(fontSize: 16, fontFamily: 'Roboto', fontWeight: FontWeight.w400),
             ),
             const SizedBox(height: 5),

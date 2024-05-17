@@ -127,7 +127,7 @@ class CinemaDetailScreenHomeState extends State<CinemaDetailScreenHome> {
                       );
                     },
                     style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(
                         vertical: 10,
                         horizontal: 20,
