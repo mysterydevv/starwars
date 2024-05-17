@@ -1,5 +1,5 @@
 
-<h1 align ="center"><b>MovieApp</b></h1>
+<h1 align ="center"><b>StarWars: MovieApp</b></h1>
 </div>
 
 
