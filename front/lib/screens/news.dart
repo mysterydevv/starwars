@@ -38,41 +38,46 @@ class NewsScreenHomeState extends State<NewsScreenHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavBar(),
-      body: Column(
-        children: [
-          const OwnAppBar(),
-          FutureBuilder<List<News>>(
-            future: news,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (snapshot.hasError) {
-                return Text('Error: ${snapshot.error}');
-              } else if (snapshot.hasData) {
-                return SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Column(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const OwnAppBar(),
+            const SizedBox(height: 20),
+            const Text(
+              'News',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            FutureBuilder<List<News>>(
+              future: news,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else if (snapshot.hasData) {
+                  return Column(
                     children: snapshot.data!
                         .map(
                           (news) => NewsCard(news: news),
-                        )
+                    )
                         .toList(),
-                  ),
-                );
-              } else {
-                return const Text('No News found');
-              }
-            },
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              showDialog(
-                  context: context, builder: (context) => const NewsForm());
-            },
-            child: const Text('Add news'),
-          ),
-        ],
+                  );
+                } else {
+                  return const Text('No News found');
+                }
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                    context: context, builder: (context) => const NewsForm());
+              },
+              child: const Text('Add news'),
+            ),
+          ],
+        ),
       ),
     );
   }

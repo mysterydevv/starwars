@@ -62,7 +62,7 @@ class StuffDetailHomeState extends State<StuffDetailsScreenHome> {
                 ),
                 const SizedBox(width: 90),
                 const Text(
-                  'Stuff Details Screen',
+                  'Stuff Details',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

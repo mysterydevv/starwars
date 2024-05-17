@@ -21,10 +21,10 @@ class StuffScreenHome extends StatefulWidget {
   const StuffScreenHome({super.key});
 
   @override
-  SuffScreenHomeState createState() => SuffScreenHomeState();
+  StuffScreenHomeState createState() => StuffScreenHomeState();
 }
 
-class SuffScreenHomeState extends State<StuffScreenHome> {
+class StuffScreenHomeState extends State<StuffScreenHome> {
   late Future<List<Stuff>> _stuff;
   StuffService stuffService = StuffService();
 
@@ -38,39 +38,48 @@ class SuffScreenHomeState extends State<StuffScreenHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavBar(),
-      body: Column(
-        children: [
-          const OwnAppBar(),
-          FutureBuilder<List<Stuff>>(
-            future: _stuff,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (snapshot.hasError) {
-                return Text('Error: ${snapshot.error}');
-              } else if (snapshot.hasData) {
-                return SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Column(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const OwnAppBar(),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Stuff Members',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
+            FutureBuilder<List<Stuff>>(
+              future: _stuff,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else if (snapshot.hasData) {
+                  return Column(
                     children: snapshot.data!
-                        .map((stuff) => StuffCard(stuff: stuff))
+                        .map((stuff) => Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: StuffCard(stuff: stuff),
+                    ))
                         .toList(),
-                  ),
-                );
-              } else {
-                return const Text('No stuff members found');
-              }
-            },
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              showDialog(
-                  context: context, builder: (context) => const StuffForm());
-            },
-            child: const Text('Add new stuff member'),
-          )
-        ],
+                  );
+                } else {
+                  return const Text('No stuff members found');
+                }
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                    context: context, builder: (context) => const StuffForm());
+              },
+              child: const Text('Add new stuff member'),
+            ),
+          ],
+        ),
       ),
     );
   }
