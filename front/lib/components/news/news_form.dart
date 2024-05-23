@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_movie/models/news.dart';
-import 'package:flutter_movie/screens/news.dart';
+import 'package:flutter_movie/screens/news_screen.dart';
 import 'package:flutter_movie/services/file_service.dart';
 import 'package:flutter_movie/services/news_service.dart';
 import 'package:flutter_movie/utils/helpers.dart';

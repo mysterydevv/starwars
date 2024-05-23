@@ -4,7 +4,7 @@ import 'package:flutter_movie/components/circular_avatar.dart';
 import 'package:flutter_movie/components/nav_bar.dart';
 import 'package:flutter_movie/components/news/news_update_form.dart';
 import 'package:flutter_movie/models/news.dart';
-import 'package:flutter_movie/screens/news.dart';
+import 'package:flutter_movie/screens/news_screen.dart';
 import 'package:flutter_movie/services/file_service.dart';
 import 'package:flutter_movie/services/news_service.dart';
 
